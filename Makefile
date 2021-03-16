@@ -10,13 +10,13 @@ all: 3.1 3.2 4.1 4.2
 	nasm -f bin 4.asm -o 4.com
 
 4.2:
-	clang crack.c -o crack
+	cc crack.c -lssl -lcrypto -o crack
 
 3.1.o:
-	clang -c 3_1.c
+	cc -c 3_1.c
 
 3.2.o:
-	clang -c 3_2.c
+	cc -c 3_2.c
 
 3.2.asm.o:
 	nasm -f macho64 3_2.asm -o 3_2_asm.o
